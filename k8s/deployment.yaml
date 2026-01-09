@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1  # Podの数を1つに設定（Self-healing体験のため）
+  selector:
+    matchLabels:
+      app: nginx  # このラベルを持つPodを管理
+  template:
+    metadata:
+      labels:
+        app: nginx  # Podに付与するラベル（selectorと一致させる）
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config  # ConfigMapから設定をマウント

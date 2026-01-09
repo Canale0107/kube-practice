@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  type: ClusterIP  # デフォルトタイプ（port-forwardでアクセス可能）
+  # type: NodePort  # NodePortを使う場合はこの行を有効化し、ClusterIPをコメントアウト
+  # nodePort: 30080  # NodePortを使う場合のポート番号（30000-32767の範囲）
+  selector:
+    app: nginx  # このラベルを持つPodにトラフィックを転送
+  ports:
+  - protocol: TCP
+    port: 80  # Serviceのポート
+    targetPort: 80  # Podのコンテナポート

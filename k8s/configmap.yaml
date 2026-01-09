@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  labels:
+    app: nginx
+data:
+  # nginxのindex.htmlをConfigMapで定義
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Kubernetes Practice</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            .container {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            h1 {
+                color: #326ce5;
+            }
+            .info {
+                background-color: #e3f2fd;
+                padding: 15px;
+                border-radius: 4px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🚀 Hello from Kubernetes!</h1>
+            <p>This page is served from a <strong>ConfigMap</strong>.</p>
+            <div class="info">
+                <h3>What you're seeing:</h3>
+                <ul>
+                    <li>✅ nginx running in a <strong>Pod</strong></li>
+                    <li>✅ Managed by a <strong>Deployment</strong></li>
+                    <li>✅ Accessed through a <strong>Service</strong></li>
+                    <li>✅ HTML content from a <strong>ConfigMap</strong></li>
+                </ul>
+            </div>
+            <p><em>Try deleting the Pod and watch it self-heal!</em></p>
+        </div>
+    </body>
+    </html>

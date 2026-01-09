@@ -10,6 +10,7 @@ data:
     <!DOCTYPE html>
     <html>
     <head>
+        <meta charset="UTF-8">
         <title>Kubernetes Practice</title>
         <style>
             body {

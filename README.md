@@ -2,6 +2,22 @@
 
 このプロジェクトは、ローカルKubernetes環境（kind）を使ってkubectlの基本操作を体験するための超ミニプロジェクトです。
 
+## 📚 詳細な学習ドキュメント
+
+**Kubernetesを初めて学ぶ方向け**に、段階的に学習できる詳細なドキュメントを用意しました。
+
+👉 **[docs/README.md](docs/README.md)** から始めましょう！
+
+### ドキュメント一覧
+
+- **[イントロダクション](docs/00-introduction.md)** - Kubernetesとは何か、なぜ学ぶのか
+- **[前提知識](docs/01-prerequisites.md)** - コンテナ、Dockerの基礎
+- **[セットアップガイド](docs/02-setup.md)** - 詳細なインストール手順
+- **[Kubernetes基本概念](docs/03-kubernetes-basics.md)** - Pod、Deployment、Serviceなどの詳細解説
+- **[ハンズオンガイド](docs/04-hands-on-guide.md)** - このプロジェクトを使った実践的な学習
+- **[トラブルシューティング](docs/05-troubleshooting.md)** - よくある問題と解決方法
+- **[次のステップ](docs/06-next-steps.md)** - さらに学ぶためのリソース
+
 ## 前提条件
 
 ### 必要なツール
